@@ -8,7 +8,12 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
      const withdrawField = document.getElementById('withdraw-input');
      const newWithdrawAmountString = withdrawField.value;
      const  newWithdrawAmount = parseFloat(newWithdrawAmountString);
-     
+     console.log(newWithdrawAmount);
+     withdrawField.value = '';
+     if(isNaN(newWithdrawAmount)){
+           alert('Please provide valid number');
+           return;
+     }
      //
      const withdrawTotalElement = document.getElementById('withdraw-total');
      const previousWithdrawTotalString = withdrawTotalElement.innerText;
@@ -22,11 +27,14 @@ document.getElementById('btn-withdraw').addEventListener('click', function(){
     const balanceTotalElement = document.getElementById('balance-total');
     const previousBalanceTotalString = balanceTotalElement.innerText; 
      const previousBalanceTotal = parseFloat(previousBalanceTotalString);
-
+    if(newWithdrawAmount > previousBalanceTotal){
+           alert('You can not withdraw money more than $1200');
+           return;
+    }
      //calculate new balancetotal
      const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
      balanceTotalElement.innerText = newBalanceTotal;
     //clear the input field
-    withdrawField.value = '';
+   
 
 })

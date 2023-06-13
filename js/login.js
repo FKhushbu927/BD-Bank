@@ -11,11 +11,11 @@ document.getElementById('btn-submit').addEventListener('click', function(){
     const password = passwordField.value;
  
      //verify email and password
-     if(email === 'abcd123@gmail.com' && password === 'secret-pass'){
+     if(email === 'fkhushbu754@gmail.com' && password === '1234'){
              window.location.href = 'bank.html';
      }
      else{
-         alert('invalid user ');
+         alert('invalid user');
      }
 
 })
